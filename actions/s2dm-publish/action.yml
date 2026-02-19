@@ -70,7 +70,6 @@ inputs:
     description: "SKOS language"
     required: false
     default: ""
-
   schema-rdf-namespace:
     description: "Namespace URI for schema-rdf concept URIs (e.g. https://covesa.org/s2dm/mydomain#). If provided, schema.nt and schema.ttl are generated."
     required: false
