@@ -21,7 +21,7 @@ jobs:
           ssh-key: ${{ secrets.DEPLOY_KEY || '' }}
 
       - name: Run s2dm-publish Action
-        uses: COVESA/s2dm/actions/s2dm-publish@main
+        uses: mfkaptan-motius/s2dm/actions/s2dm-publish@main
         with:
           repository-path: ./current
           spec-path: ./spec

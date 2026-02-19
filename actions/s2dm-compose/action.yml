@@ -1,43 +1,43 @@
-name: 'S2DM Compose'
-description: 'Compose GraphQL schema files and optionally create a release'
-author: 'COVESA'
+name: "S2DM Compose"
+description: "Compose GraphQL schema files and optionally create a release"
+author: "COVESA"
 
 inputs:
   repository-path:
-    description: 'Path to the git repository root'
+    description: "Path to the git repository root"
     required: true
 
   spec-path:
-    description: 'Path to the spec directory relative to the root of the repository'
+    description: "Path to the spec directory relative to the root of the repository"
     required: false
-    default: 'spec'
+    default: "spec"
 
   create-release:
-    description: 'Whether to create a GitHub release with the composed schema'
+    description: "Whether to create a GitHub release with the composed schema"
     required: false
-    default: 'false'
+    default: "false"
 
   github-token:
-    description: 'GitHub token for creating releases (required if create-release is true)'
+    description: "GitHub token for creating releases (required if create-release is true)"
     required: false
-    default: ''
+    default: ""
 
   s2dm-path:
-    description: 'Path where S2DM repository will be checked out'
+    description: "Path where S2DM repository will be checked out"
     required: false
-    default: 's2dm'
+    default: "s2dm"
 
 outputs:
   composed-schema-path:
-    description: 'Path to the composed schema file'
+    description: "Path to the composed schema file"
     value: ${{ steps.compose.outputs.SCHEMA_PATH }}
 
   version-bump:
-    description: 'Type of version bump (major, minor, patch, none)'
+    description: "Type of version bump (major, minor, patch, none)"
     value: ${{ steps.version-check.outputs.VERSION_BUMP }}
 
   latest-tag:
-    description: 'The latest git tag after release'
+    description: "The latest git tag after release"
     value: ${{ steps.get-latest-tag.outputs.LATEST_TAG }}
 
 runs:
@@ -46,13 +46,13 @@ runs:
     - name: Checkout S2DM repository
       uses: actions/checkout@v4
       with:
-        repository: COVESA/s2dm
+        repository: mfkaptan-motius/s2dm
         path: ${{ inputs.s2dm-path }}
 
     - name: Install Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.13'
+        python-version: "3.13"
 
     - name: Install uv
       uses: astral-sh/setup-uv@v4
