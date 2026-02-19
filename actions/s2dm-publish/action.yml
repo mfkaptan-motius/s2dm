@@ -121,7 +121,7 @@ runs:
     - name: Checkout S2DM repository
       uses: actions/checkout@v4
       with:
-        repository: mfkaptan-motius/s2dm@feat/rdf-materialization
+        repository: mfkaptan-motius/s2dm
         path: ${{ inputs.s2dm-path }}
 
     - name: Install Python
