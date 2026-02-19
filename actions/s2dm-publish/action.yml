@@ -121,7 +121,7 @@ runs:
     - name: Checkout S2DM repository
       uses: actions/checkout@v4
       with:
-        repository: COVESA/s2dm
+        repository: mfkaptan-motius/s2dm@feat/rdf-materialization
         path: ${{ inputs.s2dm-path }}
 
     - name: Install Python
