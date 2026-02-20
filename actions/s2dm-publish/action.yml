@@ -217,6 +217,13 @@ runs:
           echo "IS_INITIAL_RELEASE=true" >> "$GITHUB_OUTPUT"
           echo "CONTINUE=true" >> "$GITHUB_OUTPUT"
         fi
+
+        echo "--------------------------------"
+        echo "${{ inputs.spec-path }}"
+        echo "${{ github.workspace }}/.previous-release/graphql/schema.graphql"
+        echo "${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules"
+        echo "$ls -la ${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules"
+        echo "$(s2dm check version-bump -s ${{ inputs.spec-path }} -p ${{ github.workspace }}/.previous-release/graphql/schema.graphql --node-modules-path ${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules --output-type)"
         echo "VERSION_BUMP_TYPE: $VERSION_BUMP"
         echo "VERSION_BUMP=$VERSION_BUMP" >> "$GITHUB_OUTPUT"
 
