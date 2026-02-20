@@ -217,6 +217,7 @@ runs:
           echo "IS_INITIAL_RELEASE=true" >> "$GITHUB_OUTPUT"
           echo "CONTINUE=true" >> "$GITHUB_OUTPUT"
         fi
+        echo "VERSION_BUMP_TYPE: $VERSION_BUMP"
         echo "VERSION_BUMP=$VERSION_BUMP" >> "$GITHUB_OUTPUT"
 
     - name: Compose GraphQL schema
