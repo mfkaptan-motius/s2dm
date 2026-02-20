@@ -219,10 +219,11 @@ runs:
         fi
 
         echo "--------------------------------"
-        echo "${{ inputs.spec-path }}"
-        echo "${{ github.workspace }}/.previous-release/graphql/schema.graphql"
-        echo "${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules"
-        echo "$ls -la ${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules"
+        echo "SPEC_PATH: ${{ inputs.spec-path }}"
+        echo "PREV_SCHEMA_PATH: ${{ github.workspace }}/.previous-release/graphql/schema.graphql"
+        NODE_MODULES_PATH="${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules"
+        echo "NODE_MODULES_PATH: $NODE_MODULES_PATH"
+        echo "$(ls -la $NODE_MODULES_PATH)"
         echo "$(s2dm check version-bump -s ${{ inputs.spec-path }} -p ${{ github.workspace }}/.previous-release/graphql/schema.graphql --node-modules-path ${{ github.workspace }}/${{ inputs.s2dm-path }}/node_modules --output-type)"
         echo "VERSION_BUMP_TYPE: $VERSION_BUMP"
         echo "VERSION_BUMP=$VERSION_BUMP" >> "$GITHUB_OUTPUT"
