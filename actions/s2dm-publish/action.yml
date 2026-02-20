@@ -306,6 +306,7 @@ runs:
 
     - name: Generate GraphQL diff
       if: steps.version-check.outputs.CONTINUE == 'true' && steps.version-check.outputs.IS_INITIAL_RELEASE != 'true'
+      working-directory: ${{ inputs.repository-path }}
       id: generate-diff
       shell: bash
       run: |
