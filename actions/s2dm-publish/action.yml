@@ -316,7 +316,6 @@ runs:
       if: steps.version-check.outputs.CONTINUE == 'true' && steps.version-check.outputs.IS_INITIAL_RELEASE != 'true'
       working-directory: ${{ inputs.repository-path }}
       id: generate-diff
-      working-directory: ${{ inputs.repository-path }}
       shell: bash
       run: |
         s2dm diff graphql \
