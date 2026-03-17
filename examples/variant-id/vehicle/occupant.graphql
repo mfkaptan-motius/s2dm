@@ -1,0 +1,13 @@
+"""Occupant (Driver or Passenger) data."""
+type Vehicle_Occupant {
+  id: ID!
+  instanceLabel: String
+  identifier: Vehicle_Occupant_Identifier
+}
+
+
+"""Identifier attributes based on OAuth 2.0."""
+type Vehicle_Occupant_Identifier {
+  issuer: String
+  subject: String
+}

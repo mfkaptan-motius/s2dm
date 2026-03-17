@@ -1,0 +1,13 @@
+"""All body components."""
+type Vehicle_Body {
+  """Body type code as defined by ISO 3779."""
+  bodyType: String
+  mirrors_s: [Vehicle_Body_Mirrors]
+}
+
+
+"""All mirrors."""
+type Vehicle_Body_Mirrors {
+  id: ID!
+  isFolded: Boolean
+}

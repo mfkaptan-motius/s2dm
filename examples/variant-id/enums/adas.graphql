@@ -1,0 +1,10 @@
+enum Vehicle_ADAS_ActiveAutonomyLevel_Enum {
+  SAE_0
+  SAE_5
+}
+
+enum Vehicle_ADAS_ObstacleDetection_WarningType_Enum {
+  UNDEFINED
+  CROSS_TRAFFIC
+  BLIND_SPOT
+}

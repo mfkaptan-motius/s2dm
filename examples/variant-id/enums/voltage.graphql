@@ -1,0 +1,8 @@
+enum Vehicle_LowVoltageSystemState_Enum {
+  UNDEFINED
+  LOCK
+  OFF
+  ACC
+  ON
+  START
+}

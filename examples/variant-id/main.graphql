@@ -1,0 +1,15 @@
+type Query {
+  vehicle: Vehicle
+}
+
+
+"""High-level vehicle data."""
+type Vehicle {
+  id: ID!
+  averageSpeed(unit: VelocityUnitEnum = KILOM_PER_HR): Float
+  isAutoPowerOptimize: Boolean
+  lowVoltageSystemState: Vehicle_LowVoltageSystemState_Enum
+  adas: Vehicle_ADAS
+  body: Vehicle_Body
+  occupant_s: [Vehicle_Occupant]
+}
